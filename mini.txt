@@ -1,0 +1,1145 @@
+ST. JOSEPH’S COLLEGE OF ENGINEERING & TECHNOLOGY PALAI
+DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING
+CSL 332 NETWORKING LAB
+Name :
+Roll No. : University Register No. :
+Semester : Batch :
+Academic Year : 2021-2022
+ST. JOSEPH’S COLLEGE OF ENGINEERING & TECHNOLOGY
+PALAI
+CHOONDACHERRY, BHARANANGANAM - 686579
+CSL 332 NETWORKING LAB
+RECORD BOOK
+2021-2022 Academic Year
+Name……………………………………………………………………
+ Semester & Batch …………………Roll No.……………………….
+Branch………………………………………………………………….
+University Examination Reg. No………………………………………
+Certificate
+Certified that this is the Bonafide Record of the work done in the ……………………
+………………………………… Laboratory of St. Joseph’s College of Engineering &
+Technology, Palai by …………………………………………………………………..
+Faculty in Charge
+Internal Examiner External Examiner
+Palai
+Date …………………..
+LIST OF EXPERIMENTS
+EXP.
+NO DATE NAME OF EXPERIMENT PAGENO
+1 BASIC NETWORKING COMMANDS IN LINUX 4
+2 PROCESS CREATION USING FORK SYSTEM CALL 10
+3 SYSTEM CALL - EXECV 12
+4 SOCKET PROGRAMMING USING TCP 14
+5 SOCKET PROGRAMMING USING UDP 19
+6 SLIDING WINDOW PROTOCOL 23
+7 LEAKY BUCKET ALGORITHM 30
+8 DISTANCE VECTOR ROUTING ALGORITHM 32
+9 UNDERSTANDING THE WIRESHARK TOOL 35
+10 FILE TRANSFER PROTOL 39
+11 STUDY OF NS2 41
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 4
+COURSE OUTCOME
+CO Statement
+CO 1 Use network-related commands and configuration files in Linux Operating System
+CO 2 Develop network application programs and protocols.
+CO 3 Analyze network traffic using network monitoring tools.
+CO 4 Design and set up a network and configure different network protocols.
+CO 5 Develop simulation of fundamental network concepts using a network simulator.
+List of Exercises/Experiments : CO P
+O
+1
+P
+O
+2
+P
+O
+3
+P
+O
+4
+P
+O
+5
+P
+O
+6
+P
+O
+7
+P
+O
+8
+P
+O
+9
+P
+O
+10
+P
+O
+11
+P
+O
+12
+P
+S
+O
+1
+P
+S
+O
+2
+P
+S
+O
+3
+1. Networking commands in Linux CO 1 ✓ ✓ ✓ - - - - ✓ - ✓ - ✓ ✓ ✓ ✓
+2. Process creation using fork system call - CO 1 ✓ ✓ ✓ - - - ✓ - ✓ - ✓ ✓ ✓ ✓
+3. System call - execv
+CO 1 ✓ ✓ ✓ - ✓ - ✓ - ✓ ✓ ✓ ✓
+4. Socket programming using TCP
+CO 2 ✓ ✓ ✓ ✓ - - - ✓ - ✓ - ✓ ✓ ✓ ✓
+5. Socket programming using UDP
+CO 2 ✓ ✓ ✓ ✓ - - - ✓ - ✓ - ✓ ✓ ✓ ✓
+6. Sliding window protocol CO 2 ✓ ✓ ✓ ✓ - - - ✓ - ✓ - ✓ ✓ ✓ ✓
+7. Leaky bucket algorithm CO 3 ✓ ✓ ✓ ✓ ✓ - - ✓ - ✓ - ✓ ✓ ✓ ✓
+8. Distance vector routing algorithm CO 2 ✓ ✓ ✓ ✓ - - - ✓ - ✓ - ✓ ✓ ✓ ✓
+9. Understanding the Wireshark tool
+CO 3 ✓ ✓ ✓ ✓ ✓ - - ✓ - ✓ - ✓ ✓ ✓ ✓
+10. File transfer protocol CO 4 ✓ ✓ ✓ ✓ ✓ ✓ - ✓ - ✓ - ✓ ✓ ✓ ✓
+11. Study of ns2 CO 5 ✓ ✓ ✓ ✓ ✓ - ✓ - ✓ - ✓ ✓ ✓ ✓
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 5
+DATE: EXPERIMENT NO: 1
+BASIC NETWORKING COMMANDS IN LINUX
+AIM:
+Understand and use of commands like ifconfig, netstat, ping, arp, telnet, ftp, finger,
+traceroute, whois .
+THEORY:
+IFCONFIG
+The Unix command ifconfig (short for interface configurator) serves to configure and control
+TCP/IP network interfaces from a command line interface (CLI).
+Common uses for ifconfig include setting an interface's IP address and netmask, and
+disabling or enabling a given interface. On some Unix-like operating systems, ifconfig is
+used to configure, or view the configuration of, a network interface.
+Type ipconfig/all to see detailed configuration information for all network adapters
+configured on the computer.
+ifconfig -a: Displays the configuration of all interfaces, both active and inactive.
+NSLOOKUP
+Nslookup (stands for “Name Server Lookup”) is a useful command for getting information
+from the DNS server. It is a network administration tool for querying the Domain Name
+System (DNS) to obtain domain name or IP address mapping or any other specific DNS
+record.
+NETSTAT
+netstat (network statistics) is a command-line tool that displays network connections (both
+incoming and outgoing), routing tables, and a number of network interface statistics.
+It is used for finding problems in the network and to determine the amount of traffic on the
+network as a performance measurement.
+Parameters
+Parameters used with this command must be prefixed with a hyphen (-) rather than a slash (/).
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 6
+-a : Displays all active TCP connections and the TCP and UDP ports on which the computer
+is listening.
+-e : Displays ethernet statistics, such as the number of bytes and packets sent and received.
+This parameter can be combined with -s.
+-f : Displays fully qualified domain names <FQDN> for foreign addresses.
+-i : Displays network interfaces and their statistics (not available under Windows)
+-n : Displays active TCP connections, however, addresses and port numbers are expressed
+numerically and no attempt is made to determine names.
+-o : Displays active TCP connections and includes the process ID (PID) for each connection.
+-p Linux: Process : Show which processes are using which sockets
+PING
+Ping is a computer network tool used to test whether a particular host is reachable across an
+IP network; it is also used to self-test the network interface card of the computer, or as a
+speed test. It works by sending ICMP “echo request” packets to the target host and listening
+for ICMP “echo response” replies. Ping does not estimate the round-trip time, as it does not
+factor in the user's connection speed, but instead is used to record any packet loss, and print a
+statistical summary when finished.
+ARP
+In computer networking, the Address Resolution Protocol (ARP) is the method for finding a
+host's link layer (hardware) address when only its Internet Layer (IP) or some other Network
+Layer address is known.
+ARP has been implemented in many types of networks; it is not an IP-only or Ethernet-only
+protocol. It can be used to resolve many different network layer protocol addresses to
+interface hardware addresses, although, due to the overwhelming prevalence of IPv4 and
+Ethernet, ARP is primarily used to translate IP addresses to Ethernet MAC addresses.
+TELNET
+Telnet (Telecommunication network) is a network protocol used on the Internet or local area
+network (LAN) connections. In Linux, the telnet command is used to create a remote
+connection with a system over a TCP/IP network.
+Typically, telnet provides access to a command-line interface on a remote machine.
+The term telnet also refers to software which implements the client part of the protocol.
+Telnet clients are available for virtually all platforms.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 7
+Protocol details:
+Telnet is a client-server protocol, based on a reliable connection-oriented transport. Typically
+this protocol is used to establish a connection to TCP port 23
+FTP
+File Transfer Protocol (FTP):
+FTP is a network protocol used to transfer data from one computer to another through a
+network such as the Internet.FTP is a file transfer protocol for exchanging and manipulating
+files over a TCP computer network. An FTP client may connect to an FTP server to
+manipulate files on that server.FTP runs over TCP. It defaults to listen on port 21 for
+incoming connections from FTP clients. A connection to this port from the FTP Client forms
+the control stream on which commands are passed from the FTP client to the FTP server and
+on occasion from the FTP server to the FTP client. FTP uses out-of-band control, which
+means it uses a separate connection for control and data. Thus, for the actual file transfer to
+take place, a different connection is required which is called the data stream.
+To establish an FTP connection to a remote system, use the ftp command with the remote
+system's IP address:
+ftp [IP]
+For instance, connecting to a remote server with the IP address 192.168.100.9:
+ftp 192.168.100.9
+FINGER:
+In computer networking, the Name/Finger protocol and the Finger user information protocol
+are simple network protocols for the exchange of human-oriented status and user information.
+Finger command is a user information lookup command which gives details of all the users
+logged in. This tool is generally used by system administrators. It provides details like login
+name, user name, idle time, login time, and in some cases their email address even.
+finger -p ch
+Display information about the user ch. Output appears similar to the following:
+Login name: admin
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 8
+In real life: Computer Hope
+On since Feb 11 23:37:16 on pts/7 from domain.computerhope.com
+28 seconds Idle Time
+Unread mail since Mon Feb 12 00:22:52 2001
+TRACEROUTE:
+traceroute is a computer network tool used to determine the route taken by packets across an
+IP network. An IPv6 variant, traceroute6, is also widely available. Traceroute is often used
+for network troubleshooting. By showing a list of routers traversed, it allows the user to
+identify the path taken to reach a particular destination on the network. This can help identify
+routing problems or firewalls that may be blocking access to a site. Traceroute is also used by
+penetration testers to gather information about network infrastructure and IP ranges around a
+given host. It can also be used when downloading data, and if there are multiple mirrors
+available for the same piece of data, one can trace each mirror to get a good idea of which
+mirror would be the fastest to use.
+In other words, traceroute command in Linux prints the route that a packet takes to reach the
+host. This command is useful when you want to know about the route and about all the hops
+that a packet takes.
+WHO IS:
+WHOIS (pronounced "who is"; not an acronym) is a query/response protocol which is widely
+used for querying an official database in order to determine the owner of a domain name, an
+IP address, or an autonomous system number on the Internet. WHOIS lookups were
+traditionally made using a command line interface, but a number of simplified web-based
+tools now exist for looking up domain ownership details from different databases. WHOIS
+normally runs on TCP port 43.
+The WHOIS system originated as a method that system administrators could use to look up
+information to contact other IP address or domain name administrators (almost like "white
+pages").
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 9
+OUTPUT
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 10
+RESULT
+Successfully used and understood network commands like ifconfig, netstat, ping, arp, telnet,
+ftp, finger, traceroute, whois. It also satisfies CO1.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 11
+DATE: EXPERIMENT NO: 2
+PROCESS CREATION USING FORK SYSTEM CALL
+AIM:
+Write a C program to Perform Process creation using fork() system call.
+ALGORITHM:
+1. Start
+2. Call fork() system call
+3. If Fork() returns 0 then child process will be created.
+Print the process id of parent process and child process by getpid() and getppid()
+Create another one child process in same loop.Print the process id of parent process
+and child process by getpid() and getppid().
+Print grand parent id
+Else,
+Child process will not be created,
+print parent process id.
+Endif
+4. Stop
+PROGRAM:
+#include<stdio.h>
+#include<sys/types.h>
+#include<unistd.h>
+void main()
+{
+if (fork()!=0)
+{
+printf("\n Parent process ...PID=%d :",getpid());
+}
+else
+{
+printf("\nChid process:\n PID=%d \n Parent id PID=%d",getpid(),getpid());
+printf("Process Id,\nPID=%d\n",getpid());
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 12
+}
+}
+OUTPUT
+RESULT
+The program to implement fork() system call using c program has been completed, output
+verified and CO1 is achieved.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 13
+DATE: EXPERIMENT NO: 3
+SYSTEM CALL - EXECV
+AIM:
+Write a C program to Perform Process creation using execv() System call.
+THEORY:
+When a process calls exec, the process is completely replaced by the new program. The new
+program starts executing from its main function. A new process is not created, process id
+remains the same, and the current process's text, data, heap, and stack segments are replaced
+by the new program. exec has many flavours one of which is execv.
+execv takes two parameters. The first is the pathname of the program that is going to be
+executed. The second is a pointer to an array of pointers that hold the addresses of arguments.
+These arguments are the command line arguments for the new program
+ALGORITHM:
+1. Start
+2. Execute the first program having the execv() function
+3. Upon executing and reaching that line, the control skips to the second program.
+4. This happens while keeping the process id the same
+PROGRAM:
+//E1
+#include<stdio.h>
+#include<sys/types.h>
+#include<unistd.h>
+int main(int argc,char *argv[])
+{
+//fork();
+printf("\nFF\nPID=%d",getpid());
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 14
+char *args[]= {"Hello","ss","fff",NULL};
+execv("./f2",args);
+printf("\nBackto e1.c");
+return 0;
+}
+// E2
+#include<stdio.h>
+#include<sys/types.h>
+#include<unistd.h>
+int main(int argc,char *argv[])
+{
+printf("\nWe are in E2");
+//fork();
+printf("Second\nPID=%d",getpid());
+return 0;
+}
+OUTPUT
+RESULT
+The program to implement execv() system call using c program has been completed, output
+verified and CO1 is achieved.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 15
+DATE: EXPERIMENT NO: 4
+SOCKET PROGRAMMING USING TCP
+AIM:
+Client sends a string to the server using TCP protocol. The server reverses the string and
+returns it to the client, which then displays the reversed string.
+ALGORITHM:
+Steps to create a client using TCP/IP API
+1. Create a socket with the socket() system call.
+2. Initialize the socket address structure as per the server and connect the socket to the
+address of the server using the connect() system call.
+3. Receive and send the data using the recv() and send().
+4. Close the connection by calling the close() function.
+Steps to create a server using TCP/IP API
+1. Create a socket with the socket() system call.
+2. Initialize the socket address structure as per the server and connect the socket to the
+address of the server using the connect() system call.
+3. Listen for connections with the listen() system call.
+4. Accept a connection with the accept() system call. This call typically blocks until a
+client connects to the server.
+5. Receive and send data by using the recv() and send().
+PROGRAM:
+// Server side C/C++ program to demonstrate Socket programming
+#include <netinet/in.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/socket.h>
+#include <unistd.h>
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 16
+#define PORT 8080
+int main(int argc, char const* argv[])
+{
+int server_fd, new_socket, valread;
+struct sockaddr_in address;
+int opt = 1;
+int addrlen = sizeof(address);
+char buffer[1024] = { 0 };
+char* hello = "Hello from server";
+// Creating socket file descriptor
+if ((server_fd = socket(AF_INET, SOCK_STREAM, 0))
+== 0) {
+perror("socket failed");
+exit(EXIT_FAILURE);
+}
+// Forcefully attaching socket to the port 8080
+if (setsockopt(server_fd, SOL_SOCKET,
+SO_REUSEADDR | SO_REUSEPORT, &opt,
+sizeof(opt))) {
+perror("setsockopt");
+exit(EXIT_FAILURE);
+}
+address.sin_family = AF_INET;
+address.sin_addr.s_addr = INADDR_ANY;
+address.sin_port = htons(PORT);
+// Forcefully attaching socket to the port 8080
+if (bind(server_fd, (struct sockaddr*)&address,
+sizeof(address))
+< 0) {
+perror("bind failed");
+exit(EXIT_FAILURE);
+}
+if (listen(server_fd, 3) < 0) {
+perror("listen");
+exit(EXIT_FAILURE);
+}
+if ((new_socket
+= accept(server_fd, (struct sockaddr*)&address,
+(socklen_t*)&addrlen))
+< 0) {
+perror("accept");
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 17
+exit(EXIT_FAILURE);
+}
+valread = read(new_socket, buffer, 1024);
+printf("%s\n", buffer);
+send(new_socket, hello, strlen(hello), 0);
+printf("Hello message sent\n");
+// closing the connected socket
+close(new_socket);
+// closing the listening socket
+shutdown(server_fd, SHUT_RDWR);
+return 0;
+}
+// Client side C/C++ program to demonstrate Socket programming
+#include <arpa/inet.h>
+#include <stdio.h>
+#include <string.h>
+#include <sys/socket.h>
+#include <unistd.h>
+#define PORT 8080
+int main(int argc, char const* argv[])
+{
+int sock = 0, valread, client_fd;
+struct sockaddr_in serv_addr;
+char* hello = "Hello from client";
+char buffer[1024] = { 0 };
+if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+printf("\n Socket creation error \n");
+return -1;
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 18
+}
+serv_addr.sin_family = AF_INET;
+serv_addr.sin_port = htons(PORT);
+// Convert IPv4 and IPv6 addresses from text to binary form
+if (inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr)
+<= 0) {
+printf(
+"\nInvalid address/ Address not supported \n");
+return -1;
+}
+if ((client_fd
+= connect(sock, (struct sockaddr*)&serv_addr,
+sizeof(serv_addr)))
+< 0) {
+printf("\nConnection Failed \n");
+return -1;
+}
+send(sock, hello, strlen(hello), 0);
+printf("Hello message sent\n");
+valread = read(sock, buffer, 1024);
+printf("%s\n", buffer);
+// closing the connected socket
+close(client_fd);
+return 0;
+}
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 19
+OUTPUT:
+Server-side
+Client-side
+RESULT
+The program to implement client-server communication with socket programming and TCP
+as transport layer protocol is successfully done and the output is verified. Also, the course
+outcome CO2 is satisfied.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 20
+DATE: EXPERIMENT NO: 5
+SOCKET PROGRAMMING USING UDP
+AIM:
+Client sends a string to the server using UDP protocol. The server reverses the string and
+returns it to the client, which then displays the reversed string.
+ALGORITHM:
+The entire process can be broken down into the following steps :
+UDP Server :
+1. Create a UDP socket.
+2. Bind the socket to the server address.
+3. Wait until the datagram packet arrives from the client.
+4. Process the datagram packet and send a reply to the client.
+5. Go back to Step 3.
+UDP Client :
+1. Create a UDP socket.
+2. Send a message to the server.
+3. Wait until response from the server is received.
+4. Process reply and go back to step 2, if necessary.
+5. Close socket descriptor and exit.
+PROGRAM:
+// Server side implementation of UDP client-server model
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <netinet/in.h>
+#define PORT 8080
+#define MAXLINE 1024
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 21
+// Driver code
+int main() {
+int sockfd;
+char buffer[MAXLINE];
+char *hello = "Hello from server";
+struct sockaddr_in servaddr, cliaddr;
+// Creating socket file descriptor
+if ( (sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0 ) {
+perror("socket creation failed");
+exit(EXIT_FAILURE);
+}
+memset(&servaddr, 0, sizeof(servaddr));
+memset(&cliaddr, 0, sizeof(cliaddr));
+// Filling server information
+servaddr.sin_family = AF_INET; // IPv4
+servaddr.sin_addr.s_addr = INADDR_ANY;
+servaddr.sin_port = htons(PORT);
+// Bind the socket with the server address
+if ( bind(sockfd, (const struct sockaddr *)&servaddr,
+sizeof(servaddr)) < 0 )
+{
+perror("bind failed");
+exit(EXIT_FAILURE);
+}
+int len, n;
+len = sizeof(cliaddr); //len is value/result
+n = recvfrom(sockfd, (char *)buffer, MAXLINE,
+MSG_WAITALL, ( struct sockaddr *) &cliaddr,
+&len);
+buffer[n] = '\0';
+printf("Client : %s\n", buffer);
+sendto(sockfd, (const char *)hello, strlen(hello),
+MSG_CONFIRM, (const struct sockaddr *) &cliaddr,
+len);
+printf("Hello message sent.\n");
+return 0;
+}
+// Client side implementation of UDP client-server model
+#include <stdio.h>
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 22
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <netinet/in.h>
+#define PORT 8080
+#define MAXLINE 1024
+// Driver code
+int main() {
+int sockfd;
+char buffer[MAXLINE];
+char *hello = "Hello from client";
+struct sockaddr_in servaddr;
+// Creating socket file descriptor
+if ( (sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0 ) {
+perror("socket creation failed");
+exit(EXIT_FAILURE);
+}
+memset(&servaddr, 0, sizeof(servaddr));
+// Filling server information
+servaddr.sin_family = AF_INET;
+servaddr.sin_port = htons(PORT);
+servaddr.sin_addr.s_addr = INADDR_ANY;
+int n, len;
+sendto(sockfd, (const char *)hello, strlen(hello),
+MSG_CONFIRM, (const struct sockaddr *) &servaddr,
+sizeof(servaddr));
+printf("Hello message sent.\n");
+n = recvfrom(sockfd, (char *)buffer, MAXLINE,
+MSG_WAITALL, (struct sockaddr *) &servaddr,
+&len);
+buffer[n] = '\0';
+printf("Server : %s\n", buffer);
+close(sockfd);
+return 0;
+}
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 23
+OUTPUT
+Server-side
+Client-side
+RESULT
+The program to implement client-server communication with socket programming and UDP
+as transport layer protocol is successfully done and the output is verified. Also, the course
+outcome CO2 is satisfied.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 24
+DATE: EXPERIMENT NO: 6
+SLIDING WINDOW PROTOCOL(Go-Back-N)
+AIM:
+Implement sliding window protocol using GoBackN method.
+ALGORITHM:
+The entire process can be broken down into the following steps :
+1. Assume the sender’s window size be N.
+2. As the window size is N, so N packets are transferred at a time, i.e., packet no 1,
+packet no 2, packet no 3, till packet number N.
+3. Once the transfer of window size is completed, the sender receives the
+acknowledgment of the first frame, i.e., packet no1.
+4. As the acknowledgment receives, the sender sends the next packet, i.e., packet no 5.
+In this case, the window slides having N-1 packets, i.e., 2, 3, 4,...N and excluded the
+packet 1 as the acknowledgment of the packet 1 has been received successfully.
+5. Now, the sender receives the acknowledgment of packet 2. After receiving the
+acknowledgment for packet 2, the sender sends the next packet, i.e., packet no N+1.
+Assume that this (N+1th) packet is lost, but the sender does not know it.
+6. The sender receives the acknowledgment for the packet no 3. After receiving the
+acknowledgment of 3rd packet, the sender sends the next packet, i.e., N+2 th packet.
+The window will slide having four packets, i.e., 4, 5, 6, 7.
+7. When the packet 7 has been sent, then the sender receives the acknowledgment for the
+packet no 4. When the sender has received the acknowledgment, then the sender
+sends the next packet, i.e., the 8th packet. The window will slide having four packets,
+i.e., 5, 6, 7, 8.
+8. This happens all the time until the whole queue of packets are being transmitted from
+sender to receiver.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 25
+PROGRAM:
+// Server side implementation of GoBackN
+#include<stdio.h>
+#include<stdlib.h>
+#include<sys/socket.h>
+#include<sys/types.h>
+#include<sys/time.h>
+#include<netinet/in.h>
+#include<string.h>
+#include<unistd.h>
+#include<arpa/inet.h>
+#include<fcntl.h>
+int main()
+{
+int s_sock, c_sock;
+s_sock = socket(AF_INET, SOCK_STREAM, 0);
+struct sockaddr_in server, other;
+memset(&server, 0, sizeof(server));
+memset(&other, 0, sizeof(other));
+server.sin_family = AF_INET;
+server.sin_port = htons(9009);
+server.sin_addr.s_addr = INADDR_ANY;
+socklen_t add;
+if(bind(s_sock, (struct sockaddr*)&server, sizeof(server)) == -1) {
+printf("Binding failed\n");
+return 0;
+}
+printf("\tServer Up\n Go back n (n=3) used to send 10 messages \n\n");
+listen(s_sock, 10);
+add = sizeof(other);
+c_sock = accept(s_sock, (struct sockaddr*)&other, &add);
+ time_t t1,t2;
+char msg[50]="server message :";
+char buff[50];
+ int flag=0;
+fd_set set1,set2,set3;
+struct timeval timeout1,timeout2,timeout3;
+int rv1,rv2,rv3;
+int i=-1;
+qq:
+i=i+1;
+bzero(buff,sizeof(buff));
+char buff2[60];
+bzero(buff2,sizeof(buff2));
+strcpy(buff2,"server message :");
+buff2[strlen(buff2)]=i+'0';
+buff2[strlen(buff2)]='\0';
+printf("Message sent to client :%s \n",buff2);
+write(c_sock, buff2, sizeof(buff2));
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 26
+usleep(1000);
+i=i+1;
+bzero(buff2,sizeof(buff2));
+strcpy(buff2,msg);
+buff2[strlen(msg)]=i+'0';
+printf("Message sent to client :%s \n",buff2);
+write(c_sock, buff2, sizeof(buff2));
+i=i+1;
+usleep(1000);
+qqq:
+bzero(buff2,sizeof(buff2));
+strcpy(buff2,msg);
+buff2[strlen(msg)]=i+'0';
+printf("Message sent to client :%s \n",buff2);
+write(c_sock, buff2, sizeof(buff2));
+ FD_ZERO(&set1);
+ FD_SET(c_sock, &set1);
+ timeout1.tv_sec = 2;
+ timeout1.tv_usec = 0;
+ rv1 = select(c_sock + 1, &set1, NULL, NULL, &timeout1);
+ if(rv1 == -1)
+ perror("select error ");
+ else if(rv1 == 0){
+ printf("Going back from %d:timeout \n",i);
+i=i-3;
+goto qq;}
+ else{
+ read(c_sock, buff, sizeof(buff));
+printf("Message from Client: %s\n", buff);
+i++;
+if(i<=9)
+goto qqq;
+}
+qq2:
+FD_ZERO(&set2);
+ FD_SET(c_sock, &set2);
+ timeout2.tv_sec = 3;
+ timeout2.tv_usec = 0;
+rv2 = select(c_sock + 1, &set2, NULL, NULL, &timeout2);
+ if(rv2 == -1)
+ perror("select error "); // an error accured
+ else if(rv2 == 0){
+ printf("Going back from %d:timeout on last 2\n",i-1);
+i=i-2;
+bzero(buff2,sizeof(buff2));
+strcpy(buff2,msg);
+buff2[strlen(buff2)]=i+'0';
+write(c_sock, buff2, sizeof(buff2));
+usleep(1000);
+bzero(buff2,sizeof(buff2));
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 27
+i++;
+strcpy(buff2,msg);
+buff2[strlen(buff2)]=i+'0';
+write(c_sock, buff2, sizeof(buff2));
+ goto qq2;}
+// a timeout occured
+ else{
+ read(c_sock, buff, sizeof(buff));
+printf("Message from Client: %s\n", buff);
+bzero(buff,sizeof(buff));
+read(c_sock, buff, sizeof(buff));
+printf("Message from Client: %s\n", buff);
+}
+//}
+close(c_sock);
+close(s_sock);
+return 0;
+}
+// Client side implementation of GoBackN
+#include<stdio.h>
+#include<stdlib.h>
+#include<sys/socket.h>
+#include<sys/types.h>
+#include<netinet/in.h>
+#include<sys/time.h>
+#include<sys/wait.h>
+#include<string.h>
+#include<unistd.h>
+#include<arpa/inet.h>
+int main() {
+int c_sock;
+c_sock = socket(AF_INET, SOCK_STREAM, 0);
+struct sockaddr_in client;
+memset(&client, 0, sizeof(client));
+client.sin_family = AF_INET;
+client.sin_port = htons(9009);
+client.sin_addr.s_addr = inet_addr("127.0.0.1");
+if(connect(c_sock, (struct sockaddr*)&client, sizeof(client)) == -1) {
+printf("Connection failed");
+return 0;
+}
+printf("\n\tClient -with individual acknowledgement scheme\n\n");
+char msg1[50]="akwnowledgementof-";
+char msg2[50];
+// char msg3[50]="Final cumulative aknowledgement";
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 28
+char buff[100];
+int flag=1,flg=1;
+for(int i=0;i<=9;i++) {
+flg=1;
+bzero(buff,sizeof(buff));
+bzero(msg2,sizeof(msg2));
+ if(i==8&&flag==1){
+printf("here\n"); //simulating loss
+ //i--;
+flag=0;
+read(c_sock,buff,sizeof(buff));
+ }
+int n = read(c_sock, buff, sizeof(buff));
+ if(buff[strlen(buff)-1]!=i+'0'){ //outoforder
+ printf("Discarded as out of order \n");
+ //printf("%c, %c, -- %s\n",buff[strlen(buff)-1],'0'+i,buff);
+ //flg=0;
+i--;
+ }
+else{
+printf("Message received from server : %s %d \n",buff,i);
+ printf("Aknowledgement sent for message \n");
+strcpy(msg2,msg1);
+msg2[strlen(msg2)]=i+'0';
+//if(i==8)
+//continue; //we will send cumulative for last 2
+//if(i==9){
+//write(c_sock,msg3,sizeof(msg3));
+//printf("- %s",msg3);}
+//else
+write(c_sock,msg2, sizeof(msg2));
+//printf("- %s",msg2);
+}
+}
+close(c_sock);
+return 0;
+}
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 29
+OUTPUT
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 30
+RESULT
+The program for sliding window protocol, GoBackN was successfully executed, output was
+verified, and the course outcome CO2 is achieved.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 31
+DATE: EXPERIMENT NO: 7
+LEAKY BUCKET ALGORITHM
+AIM:
+Write a C program to implement leaky bucket algorithm by including a single machine.
+ALGORITHM:
+1. Start
+2. Set the bucket size or the buffer size.
+3. Set the output rate.
+4. Transmit the packets such that there is no overflow.
+5. Repeat the process of transmission until all packets are transmitted. (Reject packets
+where its size is greater than the bucket size)
+6. Stop buffer
+PROGRAM:
+// congestion control using leaky bucket algorithm
+#include<stdio.h>
+int main(){
+ int incoming, outgoing, buck_size, n, store = 0;
+ printf("Enter bucket size, outgoing rate and no of inputs : ");
+ scanf("%d %d %d", &buck_size, &outgoing, &n);
+ while (n != 0) {
+ printf("Enter the incoming packet size : ");
+ scanf("%d", &incoming);
+ printf("Incoming packet size %d\n", incoming);
+ if (incoming <= (buck_size - store)){
+ store += incoming;
+ printf("Bucket buffer size : %d out of %d\n", store, buck_size);
+ } else {
+ printf("Dropped %d no of packets\n", incoming - (buck_size - store));
+
+ store = buck_size;
+ printf("Bucket buffer size : %d out of %d\n", store, buck_size);
+ }
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 32
+
+ if(store<outgoing){
+ store = 0;
+ }
+ else{
+ store=outgoing-store;
+ }
+ if(store<0){
+ store=store*(-1);
+ }
+ printf("After outgoing , There are %d out of %d packets left in buffer\n", store,
+buck_size);
+ n--;
+ }
+}
+OUTPUT
+RESULT:
+The program to implement leaky bucket algorithm has been successfully completed, output
+verified and CO3 is obtained.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 33
+DATE: EXPERIMENT NO: 8
+DISTANCE VECTOR ROUTING ALGORITHM
+AIM:
+Write a program to implement distance vector routing algorithm, to compute shortest distance
+between each node and its neighbouring nodes, and to update the distance (or cost) to reach
+its neighbours.
+ALGORITHM:
+The entire process can be broken down into the following steps:
+1. A router transmits its distance vector to each of its neighbours in a routing packet.
+2. Each router receives and saves the most recently received distance vector from each
+of its neighbours.
+3. A router recalculates its distance vector when:
+4. It receives a distance vector from a neighbour containing different information than
+before.
+5. It discovers that a link to a neighbour has gone down.
+6. The DV calculation is based on minimizing the cost to each destination
+o Dx(y) = Estimate of least cost from x to y
+o C(x,v) = Node x knows cost to each neighbour v
+o Dx = [Dx(y): y ∈ N ] = Node x maintains distance vector
+7. Node x also maintains its neighbours’ distance vectors
+8. For each neighbour v, x maintains Dv = [Dv(y): y ∈ N]
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 34
+PROGRAM:
+#include<stdio.h>
+struct node
+{
+unsigned dist[20];
+unsigned from[20];
+}rt[10];
+int main()
+{
+int costmat[20][20];
+int nodes,i,j,k,count=0;
+printf("\nEnter the number of nodes : ");
+scanf("%d",&nodes);
+printf("\nEnter the cost matrix :\n");
+for(i=0;i<nodes;i++)
+{
+for(j=0;j<nodes;j++)
+{
+scanf("%d",&costmat[i][j]);
+costmat[i][i]=0;
+rt[i].dist[j]=costmat[i][j];//initialize the distance equal to cost matrix
+rt[i].from[j]=j; // initialize the source node
+}
+}
+do {
+count=0;
+for(i=0;i<nodes;i++)
+//We choose arbitrary vertex k and we calculate the direct distance from node i to k
+using cost matrix.
+//and add the distance from k to node j
+for(j=0;j<nodes;j++)
+for(k=0;k<nodes;k++)
+if(rt[i].dist[j]>costmat[i][k]+rt[k].dist[j])
+{
+//We calculate the minimum distance
+rt[i].dist[j]=rt[i].dist[k]+rt[k].dist[j];
+rt[i].from[j]=k;
+count++;
+}
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 35
+}
+while(count!=0);
+for(i=0;i<nodes;i++)
+{
+printf("\n\n For router %d\n",i+1);
+for(j=0;j<nodes;j++)
+{
+printf("\t\nnode %d via %d Distance %d ",j+1,rt[i].from[j]+1,rt[i].dist[j]);
+}
+OUTPUT
+RESULT
+The program to implement distance vector routing protocol has been successfully completed,
+output verified and CO2 is obtained.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 36
+DATE: EXPERIMENT NO: 9
+UNDERSTANDING THE WIRESHARK TOOL
+AIM:
+(a)Using Wireshark, capture packets transferred while browsing a selected website.
+Investigate protocol using each packet, the value of header field and size of packet.
+(b)Explore at least following features of Wireshark: filters, flowgraphs (TCP), statistics and
+protocol hierarchy.
+Wireshark
+Wireshark is an open-source packet analyzer, which is used for education, analysis, software
+development, communication protocol development, and network troubleshooting.
+It is used to track the packets so that each one is filtered to meet our specific needs. It is
+commonly called as a sniffer, network protocol analyzer, and network analyzer. It is also used
+by network security engineers to examine security problems.
+Wireshark is a free to use application which is used to apprehend the data back and forth. It is
+often called as a free packet sniffer computer application. It puts the network card into an
+unselective mode, i.e., to accept all the packets which it receives.
+• It is used by network security engineers to examine security problems.
+• It allows the users to watch all the traffic being passed over the network.
+• It is used by network engineers to troubleshoot network issues.
+• It also helps to troubleshoot latency issues and malicious activities on your
+network.
+• It can also analyze dropped packets.
+• It helps us to know how all the devices like laptop, mobile phones, desktop,
+switch, routers, etc., communicate in a local network or the rest of the world.
+ALGORITHM:
+1. Update System Packages
+2. Install wireshark
+3. Allocate permissions to the current user
+4. Reboot the system
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 37
+PROGRAM:
+$ sudo apt update
+$ sudo apt install wireshark
+$ sudo usermod -aG wireshark $(whoami)
+$ sudo reboot
+OUTPUT
+Capturing Packets
+After downloading and installing Wireshark, you can launch it and double-click the name of
+a network interface under Capture to start capturing packets on that interface.
+As soon as you click the interface’s name, you’ll see the packets start to appear in real time.
+Wire shark captures each packet sent to or from your system. If promiscuous mode is enabled
+by default users can view all the other packets on the network instead of only packets
+addressed to your network adapter. To check if promiscuous mode is enabled, click Capture >
+Options and verify the enable promiscuous mode on all interfaces‖ checkbox is activated at
+the bottom of this window.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 38
+Click the red Stop button near the top left corner of the window when you want to stop
+capturing traffic.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 39
+Filtering Packets
+For inspecting something specific, such as the traffic a program sends when phoning home, it
+helps to close down all other applications using the network so as to narrow down the traffic.
+as there is a large amount of packets to sift through. That’s where Wireshark’s filters come in.
+The most basic way to apply a filter is by typing it into the filter box at the top of the window
+and clicking Apply (or pressing Enter). For example, type ―dns‖ for filtering DNS packets.
+RESULT:
+Studied about Wireshark tool and captured packets while browsing website, investigated
+protocols used in each packet. Also explored features like filter, flowgraphs (TCP), statistics
+& protocol hierarchy. This study also satisfies CO3.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 40
+DATE: EXPERIMENT NO: 10
+FILE TRANSFER PROTOL(FTP)
+AIM:
+Implement FTP in Ubuntu with client-server system.
+File transfer protocol (FTP) is an Internet tool provided by TCP/IP. It helps to transfer files
+from one computer to another by providing access to directories or folders on remote
+computers and allows software, data, text file to be transferred between different kinds of
+computers. The end-user in the connection is known as localhost and the server which
+provides data is known as the remote host.
+ It encourages the direct use of remote computers.
+ It shields users from system variations (operating system, directory structures, file
+structures, etc.)
+ It promotes sharing of files and other types of data.
+FTP is a standard communication protocol. There are various other protocols like HTTP
+which are used to transfer files between computers, but they lack clarity and focus as
+compared to FTP. Moreover, the systems involved in connection are heterogeneous systems,
+i.e. they differ in operating systems, directory, structures, character sets, etc the FTP shields
+the user from these differences and transfer data efficiently and reliably. FTP can transfer
+ASCII, EBCDIC, or image files. The ASCII is the default file share format, in this, each
+character is encoded by NVT ASCII. In ASCII or EBCDIC the destination must be ready to
+accept files in this mode. The image file format is the default format for transforming binary
+files.
+ALGORITHM:
+1. Update System Packages
+2. Install vsftpd Server on Ubuntu
+3. Backup Configuration Files
+4. Create FTP User
+5. Configure Firewall to Allow FTP Traffic
+6. Connect to Ubuntu FTP Server
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 41
+PROGRAM:
+// server side
+$ sudo apt update
+$ sudo apt install vsftpd
+$ systemctl status vsftpd
+$ sudo adduser ftpuser
+$ pwd:
+$ sudo mkdir –p /home/ftpuser/ftpdir
+$ sudo chmod -R 750 /home/ftpuser/ftpdir
+$ sudo bash –c ‘echo ftpuser>>/etc/vsftpd.user_list’
+$ sudo nano /etc/vsftpd.conf
+o annonymous_enable=NO
+o local_enable=YES
+o write_enable=YES
+o chroot_local_user=YES
+o allow_writeable_chroot=YES
+o pasv_min_port=30000
+o pasv_max_port=31000
+$ sudo systemctl restart vsftpd
+$ sudo ufw allow 20:21/tcp
+$ sudo ufw allow 30000:31000/tcp
+$ sudo ufw disable
+$ sudo ufw enable
+//client side
+$ ftp -p 172.16.54.78
+ftp>ls
+ftp>cd Downloads
+ftp>ls
+ftp>get ns-simple.tcl
+RESULT:
+The implementation of FTP has been successfully completed, output verified and CO2 is
+obtained.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 42
+DATE: EXPERIMENT NO: 11
+STUDY OF NS2
+AIM:
+Install Network Simulator on Ubuntu Create a simple network configuration and run the
+simulator scenario. (This network consists of 4 nodes, N1, N2, N3 and N4.)
+THEORY:
+NS2 is an open-source simulation tool that runs on Linux. It is a discreet event simulator
+targeted at networking research and provides substantial support for simulation of routing,
+multicast protocols and IP products such as TCP, RTP, SRM, etc.
+Installation
+Install network animator
+$ sudo apt-get install -y nam
+Run the following command in terminal to install NS2
+$sudo apt-get install -y NS2
+Check Installation
+We can check our installation by installing a TCL script.
+1. Create a file
+$gedit add.txt
+2. Paste the following code into the file.
+set a 20
+set b 30
+set c [erpr $a + $b]
+putc $c
+3. Run in the terminal using NS2
+$ns add.tcl
+50
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 43
+Running a simple Simulation
+1. Paste the code into a file, simple.tcl.
+2. Run the simulation from the terminal using ns2.
+$ns simple.tcl
+3. Click on the play button to start the simulation.
+Output
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 44
+RESULT:
+Studied about Network Simulator (NS2). Installed NS2 on Ubuntu. Created a simple network
+configuration and run the simulation scenario with 4 nodes, and it also satisfies the course
+outcome CO5.
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING SJCET PALAI
+CSL 332 NETWORKING LAB Page | 45
+DEPARTMENT OF COMPUTER SCIENCE AND
+ENGINEERING
+Vision
+To evolve as a school of computing with globally reputed centres of excellence and
+serve the changing needs of the industry and society.
+Mission
+ The department is committed in bringing out career-oriented graduates who
+are industry ready through innovative practices of teaching and learning
+process
+ To nurture professional approach, leadership qualities and moral values to the
+graduates by organizing various programs periodically
+ To acquire self-sustainability and serve the society through research and
+consultancy
+Programme Educational Objectives (PEOs)
+PEO1: The graduates will have a successful career in industries associated
+with Computer Science and Engineering or as entrepreneurs.
+PEO2: To ensure that graduates will have the ability and attitude to adapt to
+emerging technological changes.
+PEO3: To enable graduates to pursue higher education and research.
